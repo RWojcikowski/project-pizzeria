@@ -118,6 +118,7 @@
         });
       });
 
+
     }
 
   }
@@ -138,9 +139,9 @@
 
       }
 
-      const testProduct = new Product();
 
-      console.log('testProduct', testProduct);
+
+
     },
 
     initData: function () {
