@@ -69,6 +69,7 @@
     renderInMenu() {
       const thisProduct = this;
 
+
       /*generate HTML based on template */
       const generatedHTML = templates.menuProduct(thisProduct.data);
       // console.log(generatedHTML);
@@ -81,18 +82,25 @@
       /* add element to menu */
       menuContainer.appendChild(thisProduct.element);
     }
-    initAccordion() {
+    getElements() {
       const thisProduct = this;
 
-
+      thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+      thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
+      thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
+      thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
+      thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+    }
+    initAccordion() {
+      const thisProduct = this;
       /* find the clickable trigger (the element that should react to clicking) */
 
       const clickableTrigger = this.element.querySelector(select.menuProduct.clickable);
-      console.log(clickableTrigger);
+
       /* START: add event listener to clickable trigger on event click */
 
       clickableTrigger.addEventListener('click', function (event) {
-        console.log(clickableTrigger);
+
         /* prevent default action for event */
 
         event.preventDefault();
@@ -101,8 +109,8 @@
         /* if there is active product and it's not thisProduct.element, remove class active from it */
         allActiveProducts.forEach(product => {
           if (product !== thisProduct.element) {
-            product.classList.remove('active')
-            console.log(product)
+            product.classList.remove('active');
+            // console.log(product)
             /* toggle active class on thisProduct.element */
             thisProduct.element.classList.toggle('active');
             console.log(thisProduct);
