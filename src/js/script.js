@@ -117,7 +117,7 @@
         /* if there is active product and it's not thisProduct.element, remove class active from it */
         allActiveProducts.forEach(product => {
           if (product !== thisProduct.element) {
-            product.classList.remove('active')
+            product.classList.remove('active');
             /* toggle active class on thisProduct.element */
             // thisProduct.element.classList.toggle('active');
             console.log(thisProduct);
@@ -158,8 +158,7 @@
       // set price to default price
       let price = thisProduct.data.price;
 
-      // for every category (param)...
-      let params = thisProduct.data.params;
+      // for every category (param)...      
       for (let paramId in thisProduct.data.params) {
 
         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
@@ -178,13 +177,13 @@
           } else if (!optionSelected && option.default) {
             price = price - option.price;
           }
-
+          thisProduct.priceSingle = price;
           console.log(optionId, option);
         }
       }
 
       // update calculated price in the HTML
-      thisProduct.priceElem.innerHTML = price;
+      thisProduct.priceSingle = price;
     }
 
 
@@ -197,7 +196,7 @@
     initMenu: function () {
       const thisApp = this;
 
-      console.log('thisApp.data', thisApp.data);
+      // console.log('thisApp.data', thisApp.data);
 
       for (productData in thisApp.data.products) {
 
