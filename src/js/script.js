@@ -1,6 +1,6 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
-// const { utils } = require('stylelint');
+
 
 
 {
@@ -94,6 +94,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
     initAccordion() {
       const thisProduct = this;
@@ -170,12 +171,25 @@
           const option = param.options[optionId];
           console.log(optionId, option);
           const optionSelected =
-            formData.hasOwnProperty(paramId) &&
-            formData[paramId].indexOf(optionId) > -1;
+            formData[paramId] &&
+            formData[paramId].includes(optionId);
           if (optionSelected && !option.default) {
             price = price + option.price;
           } else if (!optionSelected && option.default) {
             price = price - option.price;
+
+
+          }
+          const optionImage = thisProduct.imageWrapper.querySelector(`.${paramId}-${optionId}`);
+          if (optionImage) {
+            if (optionSelected) {
+
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+            else {
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+
+            }
           }
 
         }
