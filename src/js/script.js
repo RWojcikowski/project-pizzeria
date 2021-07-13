@@ -154,6 +154,7 @@
       thisProduct.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
     }
     processOrder() {
@@ -337,7 +338,7 @@
       });
     }
     add(menuProduct) {
-      const thisCart = this;
+      //const thisCart = this;
       console.log('adding product', menuProduct);
     }
   }
