@@ -65,8 +65,8 @@
   const settings = {
     amountWidget: {
       defaultValue: 1,
-      defaultMin: 1,
-      defaultMax: 9,
+      defaultMin: 0,
+      defaultMax: 10,
     }, // CODE CHANGED
     // CODE ADDED START
     cart: {
@@ -194,6 +194,7 @@
         }
       }
       /*update calculated price in the HTML*/
+      thisProduct.priceSingle = price;
       price *= thisProduct.amountWidget.value;
       thisProduct.priceElem.innerHTML = price;
     }
@@ -206,11 +207,14 @@
     }
     addToCart() {
       const thisProduct = this;
+
       app.cart.add(thisProduct.prepareCartProduct);
+
 
     }
 
     prepareCartProduct() {
+
       const thisCartProduct = this;
 
       thisCartProduct.id = menuProduct.id;
@@ -218,18 +222,19 @@
       thisCartProduct.price = menuProduct.price;
       thisCartProduct.priceSingle = menuProduct.priceSingle;
       thisCartProduct.amount = menuProduct.amount;
+      thisCartProduct.params = menuProduct.params;
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
       thisCartProduct.initActions();
-
+      thisCartProduct.prepareCartProduct();
 
       const ProductSummary = {
         params
 
-
-      };
+      }
       return params;
+
     }
 
     prepareCartProductParams() {
@@ -248,6 +253,7 @@
           options: {}
         }
 
+
         // for every option in this category
         for (let optionId in param.options) {
           const option = param.options[optionId];
@@ -262,8 +268,10 @@
             }
           }
         }
+
       }
       return params;
+
     }
   }
   class AmountWidget {
@@ -339,7 +347,9 @@
     }
     add(menuProduct) {
       //const thisCart = this;
+
       console.log('adding product', menuProduct);
+
     }
   }
 
