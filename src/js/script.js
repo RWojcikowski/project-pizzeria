@@ -259,7 +259,7 @@
 
         // for every option in this category
         for (let optionId in param.options) {
-          const option = param.options[optionId];
+          // const option = param.options[optionId];
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
 
           if (optionSelected) {
@@ -410,6 +410,18 @@
           elem.innerHTML = thisCart[key];
         }
       }
+
+    }
+    remove(cartProduct) {
+      const thisCart = this;
+
+      const index = thisCart.products.indexOf(cartProduct);
+      thisCart.products.splice(index, 1);
+
+      const removeDOM = cartProduct.dom.wrapper;
+      removeDOM.remove();
+
+      thisCart.update();
     }
   }
   class CartProduct {
@@ -424,7 +436,7 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
-      this.initActions()
+      this.initActions();
     }
     remove() {
       const thisCartProduct = this;
@@ -445,14 +457,10 @@
         event.preventDefault();
       });
       thisCartProduct.dom.remove.addEventListener('click', function () {
-        event.preventDefault();
+        // event.preventDefault();
         thisCartProduct.remove();
       });
-
     }
-
-
-
     getElements(element) {
       const thisCartProduct = this;
 
