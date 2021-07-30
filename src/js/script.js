@@ -243,7 +243,7 @@
         params: {}
 
       };
-
+      console.log(productSummary);
       return productSummary;
 
     }
@@ -291,8 +291,8 @@
       // console.log('AmountWidget', thisWidget);
       // console.log('constructor argument:', element);
       thisWidget.getElements(element);
-      thisWidget.value = thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(thisWidget.input.value || settings.amountWidget.defaultValue);
+
       thisWidget.initActions();
     }
     getElements(element) {
@@ -319,11 +319,13 @@
     initActions() {
       const thisWidget = this;
       thisWidget.input.addEventListener('change', function () {
+
+        thisWidget.setValue(thisWidget.input.value);
       });
-      thisWidget.setValue(thisWidget.input.value);
       thisWidget.linkDecrease.addEventListener('click', function (event) {
         event.preventDefault();
         thisWidget.setValue(thisWidget.value - 1);
+        console.log(thisWidget.value);
       });
       thisWidget.linkIncrease.addEventListener('click', function (event) {
         event.preventDefault();
@@ -441,7 +443,7 @@
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
-      new CartProduct(menuProduct, generatedDOM);
+      // new CartProduct(menuProduct, generatedDOM);
       // console.log('thisCart.products', thisCart.products);
       // console.log('adding product', menuProduct);
       thisCart.update();
@@ -487,7 +489,7 @@
       thisCartProduct.price = menuProduct.price;
       thisCartProduct.priceSingle = menuProduct.priceSingle;
       thisCartProduct.amount = menuProduct.amount;
-
+      console.log(thisCartProduct);
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
       this.initActions();
@@ -542,7 +544,7 @@
       );
 
       thisCartProduct.dom.amountWidget.addEventListener('updated', function () {
-        thisCartProduct.amount = thisCartProduct.amountWidget.value;
+        thisCartProduct.amountWidget.value = thisCartProduct.amount;
         thisCartProduct.price =
           thisCartProduct.priceSingle * thisCartProduct.amount;
 
