@@ -69,7 +69,7 @@ export const settings = {
   },
   db: {
     url: '//localhost:3131',
-    product: 'product',
+    product: 'products',
     order: 'order',
   },
 };

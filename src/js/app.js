@@ -1,13 +1,8 @@
-/* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 import { settings, select, classNames, templates } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 
-
 const app = {
-
-
-
   initMenu: function () {
     const thisApp = this;
     // console.log('thisApp.data', thisApp.data);
@@ -25,7 +20,7 @@ const app = {
     thisApp.ProductList = document.querySelector(select.containerOf.menu);
 
     thisApp.ProductList.addEventListener('add-to-card', function (event) {
-      app.cart.add(event.detail.Product);
+      app.cart.add(event.detail.product);
     });
   },
 
@@ -33,8 +28,10 @@ const app = {
     const thisApp = this;
     thisApp.data = {};
     // thisApp.data = dataSource;
-    const url = settings.db.url + '/' + settings.db.products;
+    const url = settings.db.url + '/' + settings.db.product;
+
     fetch(url)
+
       .then(function (rawResponse) {
         return rawResponse.json();
       })
@@ -44,23 +41,18 @@ const app = {
         thisApp.data.products = parsedResponse;
         /*execute initMenu Method */
         thisApp.initMenu();
+
       });
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+    // console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
   init: function () {
     const thisApp = this;
-
-
     console.log('*** App starting ***');
     console.log('thisApp:', thisApp);
     console.log('classNames:', classNames);
     console.log('settings:', settings);
     console.log('templates:', templates);
-
-
-
     thisApp.initData();
-
     thisApp.initCart();
   }
 };
