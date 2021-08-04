@@ -23,35 +23,34 @@ export const select = {
     amountWidget: '.widget-amount',
     cartButton: '[href="#add-to-cart"]',
   },
-
   widgets: {
     amount: {
       input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
-      datePicker: {
-        wrapper: '.date-picker',
-        input: `input[name="date"]`,
-      },
-      hourPicker: {
-        wrapper: '.hour-picker',
-        input: 'input[type="range"]',
-        output: '.output',
-      },
     },
-    booking: {
-      peopleAmount: '.people-amount',
-      hoursAmount: '.hours-amount',
-      tables: '.floor-plan .table',
+    datePicker: {
+      wrapper: '.date-picker',
+      input: `input[name="date"]`,
     },
-    nav: {
-      links: '.main-nav a',
+    hourPicker: {
+      wrapper: '.hour-picker',
+      input: 'input[type="range"]',
+      output: '.output',
     },
+  },
+  booking: {
+    peopleAmount: '.people-amount',
+    hoursAmount: '.hours-amount',
+    tables: '.floor-plan .table',
+  },
+  nav: {
+    links: '.main-nav a',
   },
   cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
-    totalNumber: '.cart__total-number',
+    totalNumber: `.cart__total-number`,
     totalPrice: '.cart__total-price strong, .cart__order-total .cart__order-price-sum strong',
     subtotalPrice: '.cart__order-subtotal .cart__order-price-sum strong',
     deliveryFee: '.cart__order-delivery .cart__order-price-sum strong',
@@ -67,15 +66,10 @@ export const select = {
     remove: '[href="#remove"]',
   },
 };
-
 export const classNames = {
   menuProduct: {
     wrapperActive: 'active',
     imageVisible: 'active',
-  },
-  cart: {
-    wrapperActive: 'active',
-    buttonDisabled: 'disabled',
   },
   booking: {
     loading: 'loading',
@@ -93,7 +87,7 @@ export const settings = {
   amountWidget: {
     defaultValue: 1,
     defaultMin: 1,
-    defaultMax: 10,
+    defaultMax: 9,
   },
   cart: {
     defaultDeliveryFee: 20,
