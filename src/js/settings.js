@@ -23,13 +23,12 @@ export const select = {
     amountWidget: '.widget-amount',
     cartButton: '[href="#add-to-cart"]',
   },
+
   widgets: {
     amount: {
       input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
-    },
-    widgets: {
       datePicker: {
         wrapper: '.date-picker',
         input: `input[name="date"]`,
