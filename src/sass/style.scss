@@ -1,4 +1,8 @@
+$color-warning: #f6b93b;
+$color-danger: #e55039;
+$color-success: #78e08f;
 @import 'partials/settings';
+@import 'partials/typography';
 @import 'partials/global';
 @import 'partials/elements';
 
@@ -6,3 +10,4 @@
 @import 'partials/cart';
 
 @import 'partials/product';
+@import 'partials/booking';
