@@ -1,17 +1,17 @@
-class BaseWidget{
-  constructor(wrapperElement, initialValue){
+class BaseWidget {
+  constructor(wrapperElement, initialValue) {
     const thisWidget = this;
-thisWidget.dom ={};
-thisWidget.dom.wrapper = wrapperElement;
+    thisWidget.dom = {};
+    thisWidget.dom.wrapper = wrapperElement;
 
-thisWidget. correctValue = initialValue;
+    thisWidget.correctValue = initialValue;
 
   }
 
-  get value(){
-    const thisWidget = this
+  get value() {
+    const thisWidget = this;
 
-    return thisWidget. correctValue
+    return thisWidget.correctValue;
   }
 
 
@@ -20,41 +20,41 @@ thisWidget. correctValue = initialValue;
 
     const newValue = thisWidget.parseValue(value);
 
-    if (newValue != thisWidget. correctValue && thisWidget.isValid(value)) {
-      thisWidget. correctValue = newValue;
+    if (newValue != thisWidget.correctValue && thisWidget.isValid(value)) {
+      thisWidget.correctValue = newValue;
       thisWidget.announce();
     }
 
     thisWidget.renderValue();
-    
+
   }
-  
-  setValue(value){
-  
-  const thisWidget = this;
-   
+
+  setValue(value) {
+
+    const thisWidget = this;
+
     thisWidget.value = value;
   }
- 
-  parseValue(value){
+
+  parseValue(value) {
     return parseInt(value);
   }
- 
-  isValid(value){
-    return !isNaN(value)
+
+  isValid(value) {
+    return !isNaN(value);
   }
-  
-  renderValue(){
+
+  renderValue() {
     const thisWidget = this;
-    thisWidget.dom.wrapper.value = thisWidget. correctValue;
+    thisWidget.dom.wrapper.value = thisWidget.correctValue;
   }
 
   announce() {
     const thisWidget = this;
 
-    
+
     const event = new CustomEvent('updated', {
-      bubbles: true 
+      bubbles: true
     });
     thisWidget.dom.wrapper.dispatchEvent(event);
   }
