@@ -17,22 +17,23 @@ class Booking {
   getData() {
     const thisBooking = this;
 
-    // eslint-disable-next-line no-unused-vars
+
     const startDateParam = settings.db.dateStartParamKey + '=' + utils.dateToStr(thisBooking.datePicker.minDate);
     const endDateParam = settings.db.dateEndParamKey + '=' + utils.dateToStr(thisBooking.datePicker.maxDate);
 
     const params = {
       bookings: [
-        //startDateParam,
+        startDateParam,
         endDateParam,
       ],
       eventsCurrent: [
-        settings.db.notRepeatParam,
-        //startDateParam,
+        startDateParam,
+        endDateParam,
+
         endDateParam,
       ],
       eventsRepeat: [
-        settings.db.repeatParam,
+
         endDateParam,
       ],
     };
@@ -63,16 +64,16 @@ class Booking {
         ]);
       })
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
-        console.log(`b`, bookings);
-        console.log(`eC`, eventsCurrent);
-        console.log(`eR`, eventsRepeat);
+        console.log('bookings', bookings);
+        console.log('eventsCurrent', eventsCurrent);
+        console.log('eventsRepeat', eventsRepeat);
       });
   }
 
   render(element) {
     const thisBooking = this;
 
-
+    /* generate HTML based on template */
     const generatedHTML = templates.bookingWidget(thisBooking);
     thisBooking.dom = {};
     thisBooking.dom.wrapper = element;
