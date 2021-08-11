@@ -175,7 +175,7 @@
                       "price":1,
                       "default":true
                    },
-                   "olives":{
+                   "olives-black":{
                       "label":"Olives",
                       "price":1,
                       "default":true
