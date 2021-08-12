@@ -42,7 +42,7 @@ class Booking {
       ],
     };
 
-    console.log(params);
+    // console.log(params);
 
     const urls = {
       bookings: settings.db.url + '/' + settings.db.bookings + '?' + params.bookings.join('&'),
@@ -50,7 +50,7 @@ class Booking {
       eventsRepeat: settings.db.url + '/' + settings.db.events + '?' + params.eventsRepeat.join('&'),
     };
 
-    console.log(urls);
+    // console.log(urls);
 
     Promise.all([
       fetch(urls.bookings),
@@ -197,7 +197,7 @@ class Booking {
     const thisBooking = this;
 
     const url = settings.db.url + '/' + settings.db.bookings;
-    console.log(url);
+    // console.log(url);
 
     const payload = {
       date: thisBooking.datePicker.value,
@@ -223,7 +223,7 @@ class Booking {
         }
       }
 
-      console.log(payload);
+      // console.log(payload);
     });
 
     const options = {

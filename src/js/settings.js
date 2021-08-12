@@ -43,6 +43,9 @@ export const select = {
       output: '.output',
     },
   },
+  carousel: {
+    wrapper: '.main-carousel',
+  },
   booking: {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',

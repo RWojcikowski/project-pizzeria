@@ -82,7 +82,7 @@ const app = {
         return rawResponse.json();
       })
       .then(function (parsedResponse) {
-        console.log('parsedResponse', parsedResponse);
+        // console.log('parsedResponse', parsedResponse);
 
 
         thisApp.data.products = parsedResponse;
@@ -120,6 +120,7 @@ const app = {
     const homeContainer = document.querySelector(select.containerOf.homePage);
 
     thisApp.homePage = new HomePage(homeContainer);
+    thisApp.initPages();
   },
 
 
@@ -140,3 +141,5 @@ const app = {
 };
 
 app.init();
+
+export default app;
