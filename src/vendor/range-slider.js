@@ -1,5 +1,5 @@
-import * as dom from './utils/dom';
-import * as func from './utils/functions';
+import { dom, func } from './utils';
+// import * as func from './utils';
 import './range-slider.css';
 
 const newLineAndTabRegexp = new RegExp('/[\\n\\t]/', 'g');

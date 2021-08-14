@@ -4,6 +4,7 @@ export const select = {
     cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
     homePage: '#template-home-page',
+
   },
   containerOf: {
     menu: '#product-list',
@@ -86,7 +87,10 @@ export const classNames = {
     loading: 'loading',
     tableBooked: 'booked',
     selectedTable: 'selected',
-
+  },
+  home: {
+    booking: '.book-table',
+    order: '.order-online',
   },
   nav: {
     active: 'active',

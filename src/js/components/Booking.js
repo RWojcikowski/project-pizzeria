@@ -8,12 +8,13 @@ class Booking {
   constructor(element) {
     const thisBooking = this;
     thisBooking.selectedTable = {};
+    thisBooking.starters = [];
     thisBooking.booked = {};
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
     thisBooking.initTables();
-    // thisBooking.sendBooking();
+    thisBooking.startersData();
   }
 
 
@@ -192,6 +193,25 @@ class Booking {
       console.log(thisBooking.selectedTable);
     });
   }
+  startersData() {
+    const thisBooking = this;
+
+    thisBooking.dom.starters.addEventListener('click', function (event) {
+
+      const clickedElement = event.target;
+      //console.log(clickedElement);
+
+      if (clickedElement.tagName === 'INPUT' && clickedElement.type === 'checkbox' && clickedElement.name === 'starter') {
+        if (clickedElement.checked === true) {
+          thisBooking.starters.push(clickedElement.value);
+        } else if (clickedElement.checked === false) {
+          thisBooking.starters.splice(thisBooking.starters.indexOf(clickedElement.value), 1);
+        }
+      }
+    });
+
+    //console.log(thisBooking.starters);
+  }
 
   sendBooking() {
     const thisBooking = this;
@@ -205,7 +225,7 @@ class Booking {
       table: thisBooking.selectedTable.tableId,
       duration: thisBooking.hoursAmountWidget.value,
       ppl: thisBooking.peopleAmountWidget.value,
-      starters: [],
+      starters: thisBooking.starters,
       phone: thisBooking.dom.phone.value,
       address: thisBooking.dom.address.value,
     };
