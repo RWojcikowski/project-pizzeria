@@ -100,6 +100,7 @@ img {
       visibility: hidden;
       overflow: hidden;
       //transition: all 1s ease-in;
+
       a {
         color: $color-light;
       }
@@ -116,6 +117,7 @@ img {
   .icon-wrapper {
     visibility: visible;
     transition: all 1s ease-in;
+
     a {
       color: $color-main;
     }
