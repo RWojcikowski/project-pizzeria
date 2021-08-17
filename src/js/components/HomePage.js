@@ -1,5 +1,7 @@
 import { templates } from '../settings.js';
 
+// import Carousel from './Carousel.js';
+
 class HomePage {
   constructor(element) {
     const thisHomePage = this;
