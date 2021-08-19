@@ -35,13 +35,25 @@
   font-weight: $font-light;
 }
 
-.sm {
-  :nth-child(1) {
+// .sm {
+//   :nth-child(1) {
+//     margin: 0 ($base-size * 0.5) 0 0;
+//     background-image: url('../images/home_Page/pizza-1.jpg');
+//   }
+
+//   :nth-child(2) {
+//     margin: 0 0 0 ($base-size * 0.5);
+//     background-image: url('../images/home_Page/pizza-2.jpg');
+//   }
+
+  .1 {
     margin: 0 ($base-size * 0.5) 0 0;
+    background-image: url('../images/home_Page/pizza-1.jpg');
   }
 
-  :nth-child(2) {
+  .2) {
     margin: 0 0 0 ($base-size * 0.5);
+    background-image: url('../images/home_Page/pizza-2.jpg');
   }
 
   .tile-small {
@@ -60,6 +72,10 @@
     transform: translate(0, -15px);
   }
 }
+// .tiles-wrapper:hover {
+//   .tile__tile-large {
+//     transform: translate(0, -15px);
+// }
 
 .lg {
   background: $color-main;
@@ -71,6 +87,30 @@
 }
 
 /* TO DO: Carousel*/
+// .carousel-cell {
+//   width: 604px;
+// }
+
+.carousel-cell.is-selected {
+  position: rel;
+  width: 604px;
+  transform: translateX(0%);
+
+  img {
+    width: 300px;
+    height: 192px;
+  }
+}
+
+.flickity-slider {
+  width: 604px;
+}
+
+.carousel-review {
+  // width: 300px;
+  height: 192px;
+  text-align: left;
+}
 
 /**/
 

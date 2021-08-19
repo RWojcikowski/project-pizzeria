@@ -75,15 +75,16 @@
 
   <script id="template-home-page" type="text/x-handlebars-template">
     <div class="page-selection">
-      <!-- <img src="images/home_page/pizza-1.jpg"> -->
+
       <div class="tiles-wrapper sm">
-        <div class="tile tile-small">
+        <div class="tile tile-small 1">
+          <!-- <img src="images/home_page/pizza-1.jpg"> -->
           <a href="#order" class="page__tile-title">Order online</a>
         </div>
-        <div class="tile tile-small">
-          <!-- <img src="images/home_page/pizza-2.jpg"> -->
+          <div class="tile tile-small 2">
+           <!-- <img src="images/home_page/pizza-2.jpg"> -->
           <a href="#booking" class="page__tile-title">Book a table</a>
-        </div>
+          </div>
       </div>
       <div class="tiles-wrapper lg">
         <div class="tile tile-large">
@@ -92,15 +93,16 @@
         </div>
       </div>
     </div>
-    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "autoPlay": 3000, "prevNextButtons": false }'>
       <div class="carousel-cell">
         <div class="carousel-image">
           <img src="images/home_page/pizza-3.jpg">
-        </div>
+       
         <div class="carousel-review">
           <h3 class="carousel__review-subtitle">Great food!</h3>
           <p class="review-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi odit dignissimos in vitae! Voluptatibus iusto laboriosam autem quaerat iure doloribus? Aut voluptate nihil voluptatibus!<span>- Margaret Osborne</span></p>
-        </div>
+        </div> 
+      </div>
       </div>
         <div class="carousel-cell">
           <div class="carousel-image">
@@ -114,11 +116,11 @@
         <div class="carousel-cell">
           <div class="carousel-image">
             <img src="images/home_page/pizza-3.jpg">
-          </div>
           <div class="carousel-review">
             <h3 class="carousel__review-subtitle">Good snack!</h3>
             <p class="review-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi odit dignissimos in vitae! Voluptatibus iusto laboriosam autem quaerat iure doloribus? Aut voluptate nihil voluptatibus!<span>- Margaret Osborne</span></p>
           </div>
+        </div>
         </div>
     </div>
     <div class="image-gallery">
