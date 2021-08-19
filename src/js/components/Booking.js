@@ -252,7 +252,7 @@ class Booking {
       })
       // eslint-disable-next-line no-unused-vars
       .then(function (parsedResponse) {
-        //console.log('parsedResponse', parsedResponse);
+        console.log('parsedResponse', parsedResponse);
         thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
       });
   }
