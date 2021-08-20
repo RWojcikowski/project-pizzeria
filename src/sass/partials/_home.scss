@@ -27,6 +27,7 @@
   color: $color-light;
   font-weight: $font-bold;
   text-decoration: none;
+  background-image: none;
 }
 
 .page__tile-subtitle {
@@ -36,25 +37,32 @@
 }
 
 .sm {
-  :nth-child(1) {
+  .order-online {
     margin: 0 ($base-size * 0.5) 0 0;
-    background-image: url('../images/home_Page/pizza-1.jpg');
+    background-image: url('../images/home_page/pizza-1.jpg');
   }
 
-  :nth-child(2) {
+  .book-table {
     margin: 0 0 0 ($base-size * 0.5);
-    background-image: url('../images/home_Page/pizza-2.jpg');
+    background-image: url('../images/home_page/pizza-2.jpg');
+  }
+}
+
+.tile-small {
+  @include flex(column, center, center);
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  transition: transform ease-in-out;
+
+  .page__tile-title {
+    transition-duration: 0.75s;
+    display: block;
   }
 
-  .tile-small {
-    background: black;
-    background-position: center;
-    background-size: cover;
-    @include flex(column, center, center);
-
-    width: 50%;
-    height: 100%;
-    transition: transform 1s ease-in-out;
+  P {
+    visibility: hidden;
   }
 }
 
@@ -62,7 +70,13 @@
   .page__tile-title {
     transform: translate(0, -15px);
   }
+
+  p {
+    visibility: visible;
+    color: white;
+  }
 }
+
 // .tiles-wrapper:hover {
 //   .tile__tile-large {
 //     transform: translate(0, -15px);
@@ -83,7 +97,7 @@
 // }
 
 .carousel-cell.is-selected {
-  position: rel;
+  position: relative;
   width: 604px;
   transform: translateX(0%);
 
@@ -130,7 +144,6 @@ img {
       font-size: ($base-size * 2);
       visibility: hidden;
       overflow: hidden;
-      //transition: all 1s ease-in;
 
       a {
         color: $color-light;
