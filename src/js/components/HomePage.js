@@ -1,6 +1,6 @@
 import { templates } from '../settings.js';
+// import app from '../app.js';
 
-// import Carousel from './Carousel.js';
 
 class HomePage {
   constructor(element) {
@@ -25,6 +25,8 @@ class HomePage {
   initWidgets() {
 
   }
+
 }
+
 
 export default HomePage;
