@@ -2,4 +2,4 @@
 Dynamic website created as exercise for Web Developer
 
 Live demo
-Live on Heroku link: pza-project.herokuapp.com
+Live on Heroku link: [https://pza-project.herokuapp.com/]
