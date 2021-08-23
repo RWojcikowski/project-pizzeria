@@ -58,7 +58,7 @@ export const select = {
   },
   nav: {
     links: '.page-nav a',
-    btns: '.btns'
+
   },
   cart: {
     productList: '.cart__order-summary',
